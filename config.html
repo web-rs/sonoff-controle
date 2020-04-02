@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="loader-default.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+
+		<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+   <script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script>
+    </head>
+	
+	<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5e68d5faeec7650c331f7146/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+
+
+</script>
+<!--End of Tawk.to Script-->
+	
+    <body>
+	
+
+
+<div id="carregar" style="display:none" class="loader loader-default is-active" data-shadow></div>
+	
+	
+
+
+	
+	<div class="container">
+   <!-- <h2>Modal</h2>
+ Trigger the modal with a button 
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Abrir Modal</button>-->
+
+        <!-- Top content -->
+        <div class="top-content">
+        	<b><font size="5" color="white"> SONOFF CONTROLE</font></b>
+			<a href="https://play.google.com/store/apps/details?id=com.rstapp.sonoffcontrol">
+			<img height="80px"  width="200px" src="./googleplay2.png"/></a>
+
+            <div class="inner-bg" style="padding-top: 20px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h4>Make Login with your application configuration number</43>
+                            		<!--<p>Entre com seu login e senha:</p>-->
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" action="" onsubmit="return loginsite()" method="post" class="login-form">
+			                    	<div class="form-group">
+			                    	
+			                        	<input type="number" maxlength="13" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="form-username" placeholder="Configuration Number" class="form-username form-control" id="sonoff">
+			                        </div>
+			                        
+			                        <button type="submit" class="btn">Enter</button>
+								
+							
+			                    </form>
+								 
+		                    </div>
+							<!--<div align=center><a href='#'><img src='https://contador.s12.com.br/img-d8bzyzyyA5zAAaxd-26.gif' border='0' alt='contador de acessos'></a><script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=d8bzyzyyA5zAAaxd'></script></div>
+ -->
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+          
+        </div>
+		
+		
+<!-- Javascript -->
+       <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+		
+		<script>
+		
+		
+		
+		
+		
+	var pegarQntidade = document.cookie.indexOf("FgsBVCedvc_7732ghdg_DSVetgd");
+	if(pegarQntidade >=0){
+	
+		document.cookie = "FgsBVCedvc_7732ghdg_DSVetgd"+'=; Max-Age=0;';
+
+	}
+	
+
+
+function loginsite() {
+document.getElementById("carregar").removeAttribute("style");
+setTimeout(continueExecution, 3000);
+  
+return false;
+  
+}
+
+
+function continueExecution()
+{
+
+var palavra = document.getElementById("sonoff").value;
+
+  if(palavra ===""){
+  
+  alert("The configuration number space must not be empty!");
+  document.getElementById("carregar").style.display = "none";
+  }else{
+  
+  document.cookie = "config="+palavra+"; path=/; max-age=31536000";
+   
+  document.cookie = "FgsBVCedvc_7732ghdg_DSVetgd="+palavra;
+  window.open("./np", "_self");
+
+ }
+  
+	
+  }
+
+
+
+document.addEventListener('keypress', function(e){
+  if(e.which == 13){
+    loginsite();
+  }
+}, false);
+
+
+
+		</script>
+		
+		
+		<script>
+	
+var config = document.cookie.replace(/(?:(?:^|.*;\s*)config\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+if(config == null){
+
+//alert("NULLO");
+//localStorage['config'] = "5555";
+
+}else{
+//alert(config);
+//localStorage['config'] = "88888888";
+document.getElementById("sonoff").value = config;
+
+//loginsite();
+
+
+
+}
+
+		
+		</script>
+		
+		
+	
+        
+
+    </body>
+
+</html>
