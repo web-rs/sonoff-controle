@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     
+        <link rel="stylesheet" href="loader-default.css">
+		 <link rel="stylesheet" href="loader-default2.css">
+
+       	<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+   <script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script>
+    </head>
+	
+    <body>
+	
+
+
+<div id="carregar" style="display:none" class="loader loader-default is-active" data-shadow></div>
+<div id="carregar2" style="display:none" class="loader2 loader-default is-active" data-shadow></div>
+	
+		
+		<script>
+		
+
+         if(!window.navigator.onLine) {
+		   window.open("../config.html", "_self");
+         }
+
+
+		
+		var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)FgsBVCedvc_7732ghdg_DSVetgd\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+		var vl = document.cookie.replace(/(?:(?:^|.*;\s*)FgsBVCedvc_773c_2ghdg_DSVetgd\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+if(cookieValue === ""){
+
+ 
+window.open("../config.html", "_self");
+
+
+
+  }
+  
+
+
+
+  
+
+  
+// Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAwUjw-pTsmlwNgTkGADhBxX0RooYCiWYg2",
+    authDomain: vl+".firebaseapp.com",
+    databaseURL: "https://"+vl+".firebaseio.com",
+    projectId: vl,
+    storageBucket: vl+".appspot.com",
+    messagingSenderId: "814688605806",
+    appId: "1:814688605806:web:2538490fad94c48a5ff87f",
+    measurementId: "G-P04C5VCXJ4"
+  };
+  // Initialize Firebase
+
+  // Get a reference to the database service
+ if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+  
+var database = firebase.database();
+
+document.getElementById("carregar").removeAttribute("style");
+  
+
+ database.ref('Configuracao').child(cookieValue).once('value').then(function(snapshot) {
+  var sonoff = snapshot.exists();
+  
+ 
+  if(!sonoff){
+
+   document.getElementById("carregar").style.display = "none";
+   document.getElementById("carregar2").removeAttribute("style");
+   
+   setTimeout(continueExecution, 2000);
+  
+  }else{
+	  
+	document.getElementById("carregar").style.display = "none";
+  
+ 
+  window.open("../", "_self");
+ }
+  
+  
+});
+
+
+function continueExecution()
+{
+
+ 
+ window.open("../config.html", "_self");
+  
+	
+  }
+	
+		</script>
+	
+        
+
+    </body>
+
+</html>
