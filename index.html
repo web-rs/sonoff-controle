@@ -271,12 +271,6 @@ pre{
 <script>
 
 
-
- window.open("http://sonoffcontrol.droppages.com/", "_self");
- 
- return;
-
-
 document.getElementById("carregar2").removeAttribute("style");
 
   // Initialize Firebase
@@ -409,6 +403,10 @@ function timeToDateString(time,sep){
 
 function start(){
 
+
+window.open("http://sonoffcontrol.droppages.com/", "_self");
+
+return false;
 
     // our firebase reference variables
     var db_ref=null;
@@ -693,6 +691,7 @@ window.onload=start;
 
 
 function sair(){
+
 window.open("./config.html", "_self");
 
 }
