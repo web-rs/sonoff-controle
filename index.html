@@ -593,7 +593,7 @@ if(valor2 == "ON"){
 
 x.play();
 
-   window.open("http://"+valor3+":8083/?releParamOff", "_blank");                                              
+   window.open("http://"+valor3+":8083/?releParamOff", "_self");                                              
 document.getElementById("mudar").src = "http://"+valor3+":8083/?releParamOff";
 
 
@@ -606,7 +606,7 @@ posts_ref.child(valor).update({
 }else{
 
 x.play();
-window.open("http://"+valor3+":8083/?releParamOn", "_blank");                         
+window.open("http://"+valor3+":8083/?releParamOn", "_self");                         
 document.getElementById("mudar").src = "http://"+valor3+":8083/?releParamOn";
 posts_ref.child(valor).update({
             status:"ON"
