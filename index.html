@@ -581,7 +581,7 @@ this.update_post=function(el){
    
         var data= extractPostData(el);
         
- var valor = markdown.entitiesToSpec(data.id);
+var valor = markdown.entitiesToSpec(data.id);
 var valor2 = markdown.entitiesToSpec(data.status);
 var valor3 = markdown.entitiesToSpec(data.ip);
 var x = document.getElementById("myAudio"); 
@@ -593,10 +593,9 @@ if(valor2 == "ON"){
 
 x.play();
 
-                                                 
+   window.open("http://"+valor3+":8083/?releParamOff", "_blank");                                              
 document.getElementById("mudar").src = "http://"+valor3+":8083/?releParamOff";
-//document.getElementsByName("iframe_a")[0].src="http://www.teste.com";
-//
+
 
 
 posts_ref.child(valor).update({
@@ -607,7 +606,7 @@ posts_ref.child(valor).update({
 }else{
 
 x.play();
-
+window.open("http://"+valor3+":8083/?releParamOn", "_blank");                         
 document.getElementById("mudar").src = "http://"+valor3+":8083/?releParamOn";
 posts_ref.child(valor).update({
             status:"ON"
